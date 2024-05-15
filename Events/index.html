@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div style="width: 500px; height: 400px">
+      <img
+        src="images/istockphoto-1672317574-170667a.webp"
+        alt=""
+        onclick="alert('Hello')"
+      />
+    </div>
+
+    <div>
+      <img
+        src="images/images.jpeg"
+        alt=""
+        onMouseover="src='images/images (1).jpeg'"
+        onMouseleave="src='images/images.jpeg'"
+      />
+    </div>
+
+    <div
+      style="width: 500px; height: 400px; background-color: aqua"
+      onmouseenter="this.style.background = 'green'"
+      onmouseout="this.style.background = 'aqua'"
+    >
+      Hover over me!
+    </div>
+
+    <div style="margin-top: 50px">
+      <label for="">Enter Zip code</label>
+      <input
+        type="text"
+        id="zip"
+        onfocus="this.style.backgroundColor = 'yellow'"
+        onblur="fillCity()"
+      /><br />
+
+      <label for="">City Name</label>
+      <input type="text" id="city" />
+    </div>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
