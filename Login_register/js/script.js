@@ -1,51 +1,39 @@
-// let users = []
+const users = [];
 
-// function inputEmail() {
-//     return document.getElementById("inputText").value
-// }
-
-// function checkEmail() {
-//     return document.getElementById("loginInput").value
-// }
-
-// function toRegister() {
-//     let mail = inputEmail()
-//     console.log('input', mail)
-
-//     if (!mail) {
-//         alert("Please type your email")
-//     }
-
-//     users.push(mail)
-//     console.log('users', users)
-
-// }
-
-// function toLogin() {
-//     let check = checkEmail()
-
-//     let isEmailFound = false
-
-//     if (!check) {
-//         alert('Please type email')
-//     }
-
-//     for (let i = 0; i < users.length; i++) {
+function inputValue(id) {
+    return document.getElementById(id).value
+}
 
 
+function handleRegister() {
+    event.preventDefault()
 
-//         if (users[i] === check) {
-//             isEmailFound = true
-//             alert("LoogedIN")
-//             break
-//         }
+    let email = inputValue("email")
 
-//     }
+    let password = inputValue("password")
 
-//     if (!isEmailFound) {
-//         alert('user not found')
-//     }
+    if (!email || !password) {
+        alert("Please fill in both email and password");
+        return;
+    }
+
+    let user = {
+        email,
+        password
+    }
+
+    const checkEmail = users.find(user => user.email === email)
+
+    if (checkEmail) {
+        alert("User already registered")
+    }
+    else {
+        users.push(user)
+    }
+
+    console.log(users)
+
+    // window.location.href = "index.html"
 
 
-
-// }
+}
